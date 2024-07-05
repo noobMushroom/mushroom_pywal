@@ -1,14 +1,3 @@
-"""
-                                      '||
-... ...  .... ... ... ... ...  ....    ||
- ||'  ||  '|.  |   ||  ||  |  '' .||   ||
- ||    |   '|.|     ||| |||   .|' ||   ||
- ||...'     '|       |   |    '|..'|' .||.
- ||      .. |
-''''      ''
-Created by Dylan Araps.
-"""
-
 import argparse
 import logging
 import os
@@ -110,7 +99,7 @@ def get_args():
                      help="Use last used wallpaper for color generation.")
 
     arg.add_argument("-e", action="store_true",
-                     help="Skip reloading gtk/xrdb/i3/sway/polybar")
+                     help="Skip reloading gtk/xrdb/i3/sway/polybar/dwm")
 
     return arg
 
