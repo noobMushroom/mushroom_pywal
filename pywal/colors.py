@@ -37,7 +37,7 @@ def colors_to_dict(colors, img):
 
         "special": {
             "background": "#080808",
-            "foreground": "#080808",
+            "foreground":colors[15] ,
             "cursor": colors[15]
         },
 
