@@ -1,6 +1,6 @@
 *.normbgcolor:  {color0}
 *.selbgcolor:  {color1}
 *.normfgcolor:  {color15}
-*.selbordercolor:  {color15}
-*.selfgcolor:  {color7}
+*.selbordercolor:  {color0}
+*.selfgcolor:  {color0}
 *.normbordercolor:  {color8}

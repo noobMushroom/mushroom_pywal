@@ -35,12 +35,6 @@ def gtk():
     util.disown(["python3", gtk_reload])
 
 
-def i3():
-    """Reload i3 colors."""
-    if shutil.which("i3-msg") and util.get_pid("i3"):
-        util.disown(["i3-msg", "reload"])
-
-
 def dwm():
     """Reload dwm colors"""
     if shutil.which("dwm") and util.get_pid("dwm"):
@@ -49,12 +43,6 @@ def dwm():
             subprocess.run(["xrdb", "-merge", "-quiet", file], check=False)
         if shutil.which("xsetroot") and util.get_pid("dwm"):
             util.disown(["xsetroot", "-name", "fsignal:1"])
-
-
-def bspwm():
-    """Reload bspwm colors."""
-    if shutil.which("bspc") and util.get_pid("bspwm"):
-        util.disown(["bspc", "wm", "-r"])
 
 
 def kitty():
@@ -66,18 +54,6 @@ def kitty():
             "kitty", "@", "set-colors", "--all",
             os.path.join(CACHE_DIR, "colors-kitty.conf")
         ])
-
-
-def polybar():
-    """Reload polybar colors."""
-    if shutil.which("polybar") and util.get_pid("polybar"):
-        util.disown(["pkill", "-USR1", "polybar"])
-
-
-def sway():
-    """Reload sway colors."""
-    if shutil.which("swaymsg") and util.get_pid("sway"):
-        util.disown(["swaymsg", "reload"])
 
 
 def colors(cache_dir=CACHE_DIR):
@@ -94,11 +70,7 @@ def colors(cache_dir=CACHE_DIR):
 def env(xrdb_file=None, tty_reload=True):
     """Reload environment."""
     xrdb(xrdb_file)
-    i3()
-    bspwm()
     kitty()
-    sway()
-    polybar()
     dwm()
     logging.info("Reloaded environment.")
     tty(tty_reload)

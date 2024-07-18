@@ -18,6 +18,7 @@ def list_backends():
             os.scandir(os.path.join(MODULE_DIR, "backends"))
             if "__" not in b.name]
 
+
 def normalize_img_path(img: str):
     """Normalizes the image path for output."""
     if os.name == 'nt':
@@ -27,6 +28,7 @@ def normalize_img_path(img: str):
         return img.replace('\\', '/')
     return img
 
+
 def colors_to_dict(colors, img):
     """Convert list of colors to pywal format."""
     return {
@@ -34,8 +36,8 @@ def colors_to_dict(colors, img):
         "alpha": util.Color.alpha_num,
 
         "special": {
-            "background": colors[0],
-            "foreground": colors[15],
+            "background": "#080808",
+            "foreground": "#080808",
             "cursor": colors[15]
         },
 
